@@ -21,6 +21,23 @@ For a Portfolio the organisation page is quite simple :
 
 ## Project
 
-- DateTime
+I have to deal with a big mission here, a lot of my old project were destroyed, but anyway i will refound a project a least for one technologies that i do know, for exemple :
+-Programming Technologies
+	- JS (jQuery, Vanilla, AngularJS, JSON, Node.js)
+	- PHP (Sympfony, phalcon)
+	- HTML/CSS (Boostrap, media queries)
+	- Canvas ( already done with DateTime)
+- System Use (in this order)
+	- Windows
+	- Linux
+	- Mac 
+
+Beside that mission i can already show some recent project like : 
+	- DateTime
 
 ## My profil
+
+Some of the things i know and may be usefull for compagnies:
+	- Fast Learning Technologies/Languages (1 week for the simpliest and 2 month for the hardest within a high pace workflow)
+	- Obvious passion to learn and teach
+	- 
