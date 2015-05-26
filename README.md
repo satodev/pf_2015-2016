@@ -37,24 +37,11 @@ I have to deal with a big mission here, a lot of my old project were destroyed, 
 	- Mac 
 
 Beside that mission i can already show some recent project like :
-	- DateTime
+- DateTime
 
 ## My profil
 
 Some of the things i know and may be usefull for compagnies:
-	- Fast Learning Technologies/Languages (1 week for the simpliest and 2 month for the hardest within a high pace workflow)
-	- Obvious passion to learn and teach
-	- Compagny aware work (respecting delais, work within a team, manage client command)
-
-## UML 
-
-```flow
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
+- Fast Learning Technologies/Languages (1 week for the simpliest and 2 month for the hardest within a high pace workflow)
+- Obvious passion to learn and teach
+- Compagny aware work (respecting delais, work within a team, manage client command)
