@@ -14,6 +14,8 @@ User interface **simplicity** : clear informations, easy to use
 ## Improvements
 
 It's the beginning of the project, we will fill every functionality and project one after an other
+- Routes -> Presentationn, Portfolio, Contact
+- Animation : Clean little animation that enhance the content
 
 ## Page Organisation
 
