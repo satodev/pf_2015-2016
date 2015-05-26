@@ -22,8 +22,7 @@ For a Portfolio the organisation page is quite simple :
 ## Project
 
 I have to deal with a big mission here, a lot of my old project were destroyed, but anyway i will refound a project a least for one technologies that i do know, for exemple :
-
--Programming Technologies
+- Programming Technologies
 	- JS (jQuery, Vanilla, AngularJS, JSON, Node.js)
 	- PHP (Sympfony, phalcon)
 	- HTML/CSS (Boostrap, media queries)
