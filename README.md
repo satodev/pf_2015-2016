@@ -8,7 +8,7 @@ User interface **simplicity** : clear informations, easy to use
 
 ## Functionnalities/Features
 
-- AngularJS
+- AngularJS 1.4-0
 - Bootstrap
 
 ## Improvements
