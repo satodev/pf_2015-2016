@@ -19,6 +19,6 @@ app.config(function($routeProvider,$locationProvider){
 		templateUrl:"index.php",
 		controller:"mainController"
 	});
-	$routeProvider.otherwise({redirectTo:"index.php"});
+	$routeProvider.otherwise({redirectTo:"/"});
 	$locationProvider.html5Mode(true);
 });
