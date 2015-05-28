@@ -28,7 +28,10 @@
 			</div>
 		</div>
 		<div class="form-group">
-
+		<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-10 col-md-5 col-lg-8">
+			<textarea class="form-control" rows="3"></textarea>
+			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
