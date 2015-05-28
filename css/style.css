@@ -1,0 +1,16 @@
+body{
+	 padding-top: 50px;
+}
+.navbar-brand{
+	padding:0;
+}
+#logo{
+	padding:5px;
+	height:50px;
+}
+
+@media (min-width: 768px){
+	.navbar-right {
+		margin-right:0px;
+	}
+}

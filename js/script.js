@@ -1,9 +1,9 @@
 var app = angular.module("sPortfolio2015",["ngRoute","ngAnimate"]);
-app.controller("mainController",function($scope, $route, $routeParams, $location){
-	console.log($scope + " " + $route + " " + $routeParams + " " + $location);
+app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle){
+	navBarToggle();
 });
 app.config(function($routeProvider,$locationProvider){
-	$routeProvider.when('/portfolio/',{
+	$routeProvider.when('/portfolio',{
 		templateUrl:"partials/portfolio.php",
 		controller:"mainController"
 	});
@@ -15,10 +15,41 @@ app.config(function($routeProvider,$locationProvider){
 		templateUrl:"partials/contact.php",
 		controller:"mainController"
 	});
-	$routeProvider.when("/pf_2015-2016",{
-		templateUrl:"index.php",
-		controller:"mainController"
-	});
-	$routeProvider.otherwise({redirectTo:"/"});
+	// $routeProvider.when("/pf_2015-2016",{
+	// 	templateUrl:"index.php",
+	// 	controller:"mainController"
+	// });
+	$routeProvider.otherwise({redirectTo:"/presentation"});
 	$locationProvider.html5Mode(true);
+});
+app.factory("navBarToggle",function(){
+	var mainTitle = document.getElementById("mainTitle");
+	var d = document.getElementById("navBarActiveController");
+	var data = null;
+	var i=0;
+	mainTitle.onclick=function(){
+		data = this;
+		toggleClass(d.children[0]);
+	}
+	d.children[0].onclick=function(){
+		data = this;
+		toggleClass(this);
+	}
+	d.children[1].onclick=function(){
+		data=this;
+		toggleClass(this);
+	}
+	d.children[2].onclick=function(){
+		data = this;
+		toggleClass(this);
+	}
+	function toggleClass(attr){
+		for(var i = 0; i<d.children.length; i++){
+			d.children[i].className = "none";
+		}
+		attr.className = "active";
+	}
+	return function(){
+		console.log("navBarToggle Active");
+	}
 });

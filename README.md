@@ -15,6 +15,7 @@ User interface **simplicity** : clear informations, easy to use
 
 It's the beginning of the project, we will fill every functionality and project one after an other
 - Routes -> Presentationn, Portfolio, Contact
+- Content : Put all the information before doing anything with the style
 - Animation : Clean little animation that enhance the content
 
 ## Page Organisation
@@ -24,7 +25,14 @@ For a Portfolio the organisation page is quite simple :
 	- Portfolio -> presenting all my recent projects
 	- Contact -> All the way to contact me beside a contact form
 
-## Project
+## Home / Presentation
+
+Some of the things i know and may be usefull for compagnies:
+- Fast Learning Technologies/Languages (1 week for the simpliest and 2 month for the hardest within a high pace workflow)
+- Obvious passion to learn and teach
+- Compagny aware work (respecting delais, work within a team, manage client command)
+
+## Portfolio
 
 I have to deal with a big mission here, a lot of my old project were destroyed, but anyway i will refound a project a least for one technologies that i do know, for exemple :
 - Programming Technologies
@@ -41,9 +49,9 @@ I have to deal with a big mission here, a lot of my old project were destroyed, 
 Beside that mission i can already show some recent project like :
 - DateTime
 
-## My profil
+## Contact
 
-Some of the things i know and may be usefull for compagnies:
-- Fast Learning Technologies/Languages (1 week for the simpliest and 2 month for the hardest within a high pace workflow)
-- Obvious passion to learn and teach
-- Compagny aware work (respecting delais, work within a team, manage client command)
+Different way to contact me like : 
+	- Social Media : LinkedIn, Google+, StackOverflow, Github
+	- Contact Form
+	- Maybe Google Map as in my previous PF
