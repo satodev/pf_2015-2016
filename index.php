@@ -11,8 +11,8 @@
 	<base href="/pf_2015-2016/">
 </head>
 <body ng-controller="mainController">
-	<div id="mainWrapper" ng-model="navAnim">
-		<nav class="navbar navbar-inverse navbar-fixed-top animBorderColor">
+	<div id="mainWrapper">
+		<nav ng-class="myCssVar" class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right" id="navBarActiveController">
-					<li class="active"><a href="/pf_2015-2016/presentation">Presentation</a></li>
+					<li ng-click="myCssVar='css-class'" class="active"><a href="/pf_2015-2016/presentation">Presentation</a></li>
 					<li><a href="/pf_2015-2016/portfolio">Portfolio </a></li>
 					<li><a href="/pf_2015-2016/contact">Contact</a></li>
 				</ul>

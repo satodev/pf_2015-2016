@@ -49,15 +49,15 @@ app.factory("navBarToggle",function(){
 		console.log("navBarToggle Active");
 	}
 });
-app.animation(".animBorderColor",["$animateCss",function($animateCss){
-	return{
-		enter:function(element,doneFn){
-			var height = element[0].offsetHeight;
-			return $animateCss(element, {
-				from: { height:'0px' },
-				to: { height:height + 'px' },
-				duration: 1 
-			});
-		}
-	}
-}]);
+// app.animation(".animBorderColor",["$animateCss",function($animateCss){
+// 	return{
+// 		enter:function(element,doneFn){
+// 			var height = element[0].offsetHeight;
+// 			return $animateCss(element, {
+// 				from: { height:'0px' },
+// 				to: { height:height + 'px' },
+// 				duration: 1 
+// 			});
+// 		}
+// 	}
+// }]);
