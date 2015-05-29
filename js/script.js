@@ -15,10 +15,6 @@ app.config(function($routeProvider,$locationProvider){
 		templateUrl:"partials/contact.php",
 		controller:"mainController"
 	});
-	// $routeProvider.when("/pf_2015-2016",{
-	// 	templateUrl:"index.php",
-	// 	controller:"mainController"
-	// });
 	$routeProvider.otherwise({redirectTo:"/presentation"});
 	$locationProvider.html5Mode(true);
 });
@@ -53,3 +49,15 @@ app.factory("navBarToggle",function(){
 		console.log("navBarToggle Active");
 	}
 });
+app.animation(".animBorderColor",["$animateCss",function($animateCss){
+	return{
+		enter:function(element,doneFn){
+			var height = element[0].offsetHeight;
+			return $animateCss(element, {
+				from: { height:'0px' },
+				to: { height:height + 'px' },
+				duration: 1 
+			});
+		}
+	}
+}]);

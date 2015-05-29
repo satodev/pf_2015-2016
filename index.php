@@ -11,8 +11,8 @@
 	<base href="/pf_2015-2016/">
 </head>
 <body ng-controller="mainController">
-	<div id="mainWrapper">
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div id="mainWrapper" ng-model="navAnim">
+		<nav class="navbar navbar-inverse navbar-fixed-top animBorderColor">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>

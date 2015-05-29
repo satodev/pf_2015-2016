@@ -1,5 +1,14 @@
 body{
-	 padding-top: 50px;
+	padding-top: 50px;
+}
+.navbar.navbar-inverse.navbar-fixed-top{
+	border-bottom:5px solid red;
+}
+.changeBorderColor.ng-enter{
+	border-bottom:5px solid green;
+}
+.changeBorderColor.ng-enter-active{
+	border-bottom:5px solid blue;	
 }
 .navbar-brand{
 	padding:0;
