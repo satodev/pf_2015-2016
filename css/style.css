@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Playball);
 body{
 	padding-top: 50px;
 }
+/*Navbar*/
 .anim-default{
-	border-bottom: 3px solid lightgrey;
+	border-bottom: 3px solid red;
 }
 .anim-presentation{
 	border-bottom: 3px solid red;
@@ -20,9 +22,33 @@ body{
 	padding:5px;
 	height:50px;
 }
+.navbar-right li img{
+	opacity:0.5;
+}
+.navbar-right li:hover img{
+	opacity:1;
+}
 
 @media (min-width: 768px){
 	.navbar-right {
 		margin-right:0px;
 	}
+}
+/*Presentation*/
+.mainPresentation .jumbotron{
+	font-family: 'Playball', cursive;
+	background: rgba(255,255,255,1);
+background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
+.mainPresentation .jumbotron h1{
+	text-align: center;
+	text-shadow: 0 0 2px #fff; /* horizontal-offset vertical-offset 'blur' colour */
+	-moz-text-shadow: 0 0 2px #fff;
+	-webkit-text-shadow: 0 0 2px #fff;
 }

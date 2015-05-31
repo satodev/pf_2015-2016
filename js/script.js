@@ -6,12 +6,16 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 		var elem = el;
 		scopeFactory(elem);
 	}
-	$scope.class = "anim-default";
-	$scope.presentationClicked = function(){
-		if($scope.class!= null){
-			$scope.class = "anim-presentation"
+	$scope.autoCollapseMenu = function(){
+		var n = document.getElementsByClassName("nav");
+		for(var i=0; i<n.length;i++){
+			n[i].onclick = function(){
+				$('.collapse').collapse("hide");
+			}
 		}
+
 	}
+	$scope.autoCollapseMenu();
 });
 app.config(function($routeProvider,$locationProvider){
 	$routeProvider.when('/portfolio',{
@@ -67,22 +71,22 @@ app.factory("scopeFactory",function(){
 			var e = elem;
 			switch(e){
 				case "presentation":
-					cont.classList.add("anim-presentation");
-					cont.classList.remove("anim-portfolio");
-					cont.classList.remove("anim-contact");
+				cont.classList.add("anim-presentation");
+				cont.classList.remove("anim-portfolio");
+				cont.classList.remove("anim-contact");
 				break;
 				case "portfolio":
-					cont.classList.add("anim-portfolio");
-					cont.classList.remove("anim-presentation");
-					cont.classList.remove("anim-contact");
+				cont.classList.add("anim-portfolio");
+				cont.classList.remove("anim-presentation");
+				cont.classList.remove("anim-contact");
 				break;
 				case"contact":
-					cont.classList.add("anim-contact");
-					cont.classList.remove("anim-portfolio");
-					cont.classList.remove("anim-presentation");
+				cont.classList.add("anim-contact");
+				cont.classList.remove("anim-portfolio");
+				cont.classList.remove("anim-presentation");
 				break;
 				default:
-					cont.classList.add("anim-default");
+				cont.classList.add("anim-default");
 				break;
 			}
 		}
