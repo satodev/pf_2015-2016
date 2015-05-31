@@ -8,12 +8,17 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 	}
 	$scope.autoCollapseMenu = function(){
 		var n = document.getElementsByClassName("nav");
+		var nb = document.getElementsByClassName("navbar-brand");
 		for(var i=0; i<n.length;i++){
 			n[i].onclick = function(){
 				$('.collapse').collapse("hide");
 			}
 		}
-
+		for(var j=0;j<nb.length;j++){
+			nb[j].onclick = function(){
+				$('.collapse').collapse("hide");
+			}
+		}
 	}
 	$scope.autoCollapseMenu();
 });
