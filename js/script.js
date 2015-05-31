@@ -1,6 +1,17 @@
 var app = angular.module("sPortfolio2015",["ngRoute","ngAnimate"]);
-app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle){
+app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle,scopeFactory){
 	navBarToggle();
+	
+	$scope.animNavbar = function(el){
+		var elem = el;
+		scopeFactory(elem);
+	}
+	$scope.class = "anim-default";
+	$scope.presentationClicked = function(){
+		if($scope.class!= null){
+			$scope.class = "anim-presentation"
+		}
+	}
 });
 app.config(function($routeProvider,$locationProvider){
 	$routeProvider.when('/portfolio',{
@@ -49,15 +60,32 @@ app.factory("navBarToggle",function(){
 		console.log("navBarToggle Active");
 	}
 });
-// app.animation(".animBorderColor",["$animateCss",function($animateCss){
-// 	return{
-// 		enter:function(element,doneFn){
-// 			var height = element[0].offsetHeight;
-// 			return $animateCss(element, {
-// 				from: { height:'0px' },
-// 				to: { height:height + 'px' },
-// 				duration: 1 
-// 			});
-// 		}
-// 	}
-// }]);
+app.factory("scopeFactory",function(){
+	return function(elem){
+		var cont = document.getElementById("mainNavBar");
+		if(elem!=null){
+			var e = elem;
+			switch(e){
+				case "presentation":
+					cont.classList.add("anim-presentation");
+					cont.classList.remove("anim-portfolio");
+					cont.classList.remove("anim-contact");
+				break;
+				case "portfolio":
+					cont.classList.add("anim-portfolio");
+					cont.classList.remove("anim-presentation");
+					cont.classList.remove("anim-contact");
+				break;
+				case"contact":
+					cont.classList.add("anim-contact");
+					cont.classList.remove("anim-portfolio");
+					cont.classList.remove("anim-presentation");
+				break;
+				default:
+					cont.classList.add("anim-default");
+				break;
+			}
+		}
+		console.log(elem);
+	}
+});

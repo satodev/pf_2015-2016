@@ -8,7 +8,7 @@
 	<div class="presentation">
 		<h3>Fast Learning Technologies</h3>
 		<p>
-			My little experience and my passion to programming allows me, somehow, to learn quite fast some technologies that we need for our projects
+			My experience and my passion to programming allows me, somehow, to learn quite fast some technologies that we need for our projects. More precisely, i'm talking about almost all web technologies, specially JavaScript that is by far one of my favorite (as you can you in the list bellow).
 		</p>
 		<h3>Learn & Teach</h3>
 		<p>

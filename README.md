@@ -27,10 +27,11 @@ For a Portfolio the organisation page is quite simple :
 
 ## Home / Presentation
 
-Some of the things i know and may be usefull for compagnies:
+Some of the things i know and may be usefull for compagnies ( i'll write down all the points that seemd important for me and then clear them up, or rearrange them):
 - Fast Learning Technologies/Languages (1 week for the simpliest and 2 month for the hardest within a high pace workflow)
 - Obvious passion to learn and teach
 - Compagny aware work (respecting delais, work within a team, manage client command)
+- Good programming (ACID (Atomicity, Consistency, Isolation, Durability) programming)
 
 ## Portfolio
 

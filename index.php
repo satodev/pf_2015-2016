@@ -12,7 +12,7 @@
 </head>
 <body ng-controller="mainController">
 	<div id="mainWrapper">
-		<nav ng-class="myCssVar" class="navbar navbar-inverse navbar-fixed-top">
+		<nav id="mainNavBar" class="navbar navbar-inverse navbar-fixed-top anim-default">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
@@ -21,19 +21,21 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div class="container-fluid">
-				<a class="navbar-brand" href="/pf_2015-2016/presentation" id="mainTitle"><img id="logo" src="img/logo.png" alt="Brand"></a>
+					<a ng-click="animNavbar('presentation')" class="navbar-brand" href="/pf_2015-2016/presentation" id="mainTitle">
+						<img id="logo" src="img/logo.png" alt="Brand">
+					</a>
 				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right" id="navBarActiveController">
-					<li ng-click="myCssVar='css-class'" class="active"><a href="/pf_2015-2016/presentation">Presentation</a></li>
-					<li><a href="/pf_2015-2016/portfolio">Portfolio </a></li>
-					<li><a href="/pf_2015-2016/contact">Contact</a></li>
+					<li ng-click="animNavbar('presentation')"class="active"><a href="/pf_2015-2016/presentation">Presentation</a></li>
+					<li ng-click="animNavbar('portfolio')"><a href="/pf_2015-2016/portfolio">Portfolio </a></li>
+					<li ng-click="animNavbar('contact')"><a href="/pf_2015-2016/contact">Contact</a></li>
 				</ul>
 			</div>
 		</nav>
 		<div id="view" ng-view>
-			
+			<noscript><h1>Enable Javascript Please</h1></noscript>
 		</div>
 	</div>
 	<script src="node_modules/angular/angular.js"></script>
