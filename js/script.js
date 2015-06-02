@@ -1,11 +1,7 @@
 var app = angular.module("sPortfolio2015",["ngRoute","ngAnimate"]);
-app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle,scopeFactory){
+app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle){
 	navBarToggle();
-	
-	$scope.animNavbar = function(el){
-		var elem = el;
-		scopeFactory(elem);
-	}
+
 	$scope.autoCollapseMenu = function(){
 		var n = document.getElementsByClassName("nav");
 		var nb = document.getElementsByClassName("navbar-brand");
@@ -38,35 +34,74 @@ app.config(function($routeProvider,$locationProvider){
 	$routeProvider.otherwise({redirectTo:"/presentation"});
 	$locationProvider.html5Mode(true);
 });
-app.factory("navBarToggle",function(){
-	var mainTitle = document.getElementById("mainTitle");
-	var d = document.getElementById("navBarActiveController");
+app.factory("navBarToggle",function(scopeFactory){
+	var mainTitle = document.getElementById("logo");
 	var data = null;
 	var i=0;
-	mainTitle.onclick=function(){
-		data = this;
-		toggleClass(d.children[0]);
+	
+	function linkClicked(){
+		var qa = document.querySelectorAll("a");
+		var logo = document.getElementById("logo");
+		for(var i=0; i<qa.length;i++){
+			qa[i].onclick=function(){
+				console.log(this);
+				var linkAttr = this.getAttribute("href");
+				console.log(linkAttr);
+				detectNavBarElem(linkAttr);
+			}	
+		}
+		logo.onclick=function(){
+			console.log(this.parentNode);
+			var logoAttr = logo.parentNode.getAttribute("href");
+			detectNavBarElem(logoAttr);
+		}
 	}
-	d.children[0].onclick=function(){
-		data = this;
-		toggleClass(this);
+	function detectNavBarElem(elem){
+		if(elem == "/pf_2015-2016/portfolio"){
+			console.log("portfolio detected in link");
+			scopeFactory("portfolio");
+			getNavBarActiveElem("portfolio");
+		}
+		if(elem == "/pf_2015-2016/presentation"){
+			console.log("presentation detected in link");
+			scopeFactory("presentation");	
+			getNavBarActiveElem("presentation");
+		}
+		if(elem == "/pf_2015-2016/contact"){
+			console.log("contact detected in link");
+			scopeFactory("contact");
+			getNavBarActiveElem("contact");
+		}
 	}
-	d.children[1].onclick=function(){
-		data=this;
-		toggleClass(this);
-	}
-	d.children[2].onclick=function(){
-		data = this;
-		toggleClass(this);
+	function getNavBarActiveElem(searchElem){
+		var se = searchElem;
+		var d = document.getElementById("navBarActiveController");
+		var obj = {};
+		for(var i=0; i<d.childElementCount;i++){
+			console.log(d.chilNodes);
+			var elem = d.children[i];
+			obj[i] = elem;
+		}
+		if(se == "portfolio"){
+			toggleClass(obj[1]);
+		}
+		if(se == "presentation"){
+			toggleClass(obj[0]);
+		}
+		if(se == "contact"){
+			toggleClass(obj[2]);
+		}
 	}
 	function toggleClass(attr){
+		var d = document.getElementById("navBarActiveController");
 		for(var i = 0; i<d.children.length; i++){
 			d.children[i].className = "none";
 		}
+		console.log(attr);
 		attr.className = "active";
 	}
 	return function(){
-		console.log("navBarToggle Active");
+		linkClicked();
 	}
 });
 app.factory("scopeFactory",function(){
@@ -95,6 +130,5 @@ app.factory("scopeFactory",function(){
 				break;
 			}
 		}
-		console.log(elem);
 	}
 });

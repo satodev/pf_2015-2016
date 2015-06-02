@@ -1,10 +1,28 @@
 <div class="mainPresentation">
 	<div class="jumbotron">
 		<h1>Satoru HEMMI - Web Developper</h1>
+		<p><a class="btn btn-primary btn-lg" href="/pf_2015-2016/portfolio" role="button">Learn more</a></p>
 	</div>
 	<div class="container-fluid">
 		<div class="intro">
 			Hi, i'm Satoru HEMMI,i live in Paris and i'm looking for a job as a Web developper, through this page i will present a bit about myself and maybe convince you to hire me
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+				<a href="#" class="thumbnail">
+					<img src="..." alt="...">
+				</a>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<a href="#" class="thumbnail">
+					<img src="..." alt="...">
+				</a>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<a href="#" class="thumbnail">
+					<img src="..." alt="...">
+				</a>
+				</div>
 		</div>
 		<div class="presentation">
 			<h3>Fast Learning Technologies</h3>

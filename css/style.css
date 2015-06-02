@@ -2,6 +2,12 @@
 body{
 	padding-top: 50px;
 }
+::selection{
+	background-color:red;
+}
+::-moz-selection{
+	background-color:red;
+}
 /*Navbar*/
 .anim-default{
 	border-bottom: 3px solid red;
@@ -51,4 +57,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	text-shadow: 0 0 2px #fff; /* horizontal-offset vertical-offset 'blur' colour */
 	-moz-text-shadow: 0 0 2px #fff;
 	-webkit-text-shadow: 0 0 2px #fff;
+}
+.intro{
+	text-align:center;
+}
+.btn{
+	font-family:sans-serif;
 }

@@ -20,15 +20,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<div class="container-fluid">
-					<a ng-click="animNavbar('presentation')" id="mainTitle" class="navbar-brand" href="/pf_2015-2016/presentation" >
-						<img id="logo" src="img/logo.png" alt="Brand">
+				<div class="container-fluid" ng-click="animNavbar('presentation')">
+					<a href="/pf_2015-2016/presentation" id="mainTitle" class="navbar-brand">
+						<img id="logo" src="img/logo.png" alt="Brand" /> 
 					</a>
 				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left" id="navBarActiveController">
-					<li ng-click="animNavbar('presentation')"class="active">
+					<li ng-click="animNavbar('presentation')" class="active">
 						<a href="/pf_2015-2016/presentation">Presentation</a>
 					</li>
 					<li ng-click="animNavbar('portfolio')">
