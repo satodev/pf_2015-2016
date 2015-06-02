@@ -49,7 +49,6 @@ app.factory("navBarToggle",function(scopeFactory){
 			}	
 		}
 		logo.onclick=function(){
-			console.log(this.parentNode);
 			var logoAttr = logo.parentNode.getAttribute("href");
 			detectNavBarElem(logoAttr);
 		}

@@ -2,6 +2,11 @@
 body{
 	padding-top: 50px;
 }
+hr{
+	width: 25%;
+	color:#000;
+	border-color:#ccc;
+}
 ::selection{
 	background-color:red;
 }
@@ -40,17 +45,17 @@ body{
 		margin-right:0px;
 	}
 }
-/*Presentation*/
+/*Presentation - jumbotron*/
 .mainPresentation .jumbotron{
 	font-family: 'Playball', cursive;
 	background: rgba(255,255,255,1);
-background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+	background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+	background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
 }
 .mainPresentation .jumbotron h1{
 	text-align: center;
@@ -58,9 +63,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	-moz-text-shadow: 0 0 2px #fff;
 	-webkit-text-shadow: 0 0 2px #fff;
 }
-.intro{
+.jumbotron{
+	padding-bottom:10px;
+}
+.jumbotron .btn{
+	width:20%;
+	font-family:sans-serif;
+	text-align:center;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	border-color:red;
+	background-color: #333;
+	color:#fff;
+}
+.jumbotron .btn:hover{
+	border-color:#adadad;
+}
+@media (max-width: 768px){
+	.jumbotron .btn{
+		width: auto;
+		font-family:sans-serif;
+		text-align:center;
+	}
+}
+/*Presentation - thumbnail*/
+.mainPresentation .thumbnail{
+	min-height:280px;
+}
+.mainPresentation .thumbnail h3{
 	text-align:center;
 }
-.btn{
-	font-family:sans-serif;
+.mainPresentation .thumbnail p{
+	text-align: justify;
+	padding:10px;
+}
+.mainPresentation .thumbnail span{
+	display:block;
+	text-align:center;
+	font-size: 5em;
+	line-height:1em;
+}
+@media (max-width: 992px){
+	.mainPresentation .thumbnail{
+		margin-top:25px;
+		min-height:100%;
+	}
 }
