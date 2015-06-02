@@ -44,9 +44,7 @@ app.factory("navBarToggle",function(scopeFactory){
 		var logo = document.getElementById("logo");
 		for(var i=0; i<qa.length;i++){
 			qa[i].onclick=function(){
-				console.log(this);
 				var linkAttr = this.getAttribute("href");
-				console.log(linkAttr);
 				detectNavBarElem(linkAttr);
 			}	
 		}
@@ -58,17 +56,14 @@ app.factory("navBarToggle",function(scopeFactory){
 	}
 	function detectNavBarElem(elem){
 		if(elem == "/pf_2015-2016/portfolio"){
-			console.log("portfolio detected in link");
 			scopeFactory("portfolio");
 			getNavBarActiveElem("portfolio");
 		}
 		if(elem == "/pf_2015-2016/presentation"){
-			console.log("presentation detected in link");
 			scopeFactory("presentation");	
 			getNavBarActiveElem("presentation");
 		}
 		if(elem == "/pf_2015-2016/contact"){
-			console.log("contact detected in link");
 			scopeFactory("contact");
 			getNavBarActiveElem("contact");
 		}
@@ -78,7 +73,6 @@ app.factory("navBarToggle",function(scopeFactory){
 		var d = document.getElementById("navBarActiveController");
 		var obj = {};
 		for(var i=0; i<d.childElementCount;i++){
-			console.log(d.chilNodes);
 			var elem = d.children[i];
 			obj[i] = elem;
 		}
@@ -97,7 +91,6 @@ app.factory("navBarToggle",function(scopeFactory){
 		for(var i = 0; i<d.children.length; i++){
 			d.children[i].className = "none";
 		}
-		console.log(attr);
 		attr.className = "active";
 	}
 	return function(){
