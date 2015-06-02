@@ -7,8 +7,14 @@ hr{
 	color:#000;
 	border-color:#ccc;
 }
-::selection{
+.mainPresentation ::selection{
 	background-color:red;
+}
+.mainPortfolio ::selection{
+	background-color:purple;	
+}
+.mainContact ::selection{
+	background-color: green;
 }
 ::-moz-selection{
 	background-color:red;
@@ -24,7 +30,7 @@ hr{
 	border-bottom: 3px solid purple;
 }
 .anim-contact{
-	border-bottom: 3px solid orange;
+	border-bottom: 3px solid green;
 }
 .navbar-brand{
 	padding:0;

@@ -1,4 +1,4 @@
-<div class="container-fluid mainContact">
+<div class="mainContact container-fluid">
 	<div class="page-header">
 		<h1>Contact</h1>
 	</div>

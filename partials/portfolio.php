@@ -1,4 +1,4 @@
-<div class="pf_wrapper container-fluid ">
+<div class="mainPortfolio container-fluid ">
 	<div class="page-header">
 		<h1>Portfolio</h1>
 	</div>
