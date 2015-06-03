@@ -35,35 +35,19 @@
 			</div>
 		</div>
 		<div class="technical_skill">
-			<h3>Favorite Programming Languages</h3>
-			<ul>
-				<li>HTML/CSS</li>
-				<li>JavaScript</li>
-				<li>PHP</li>
-			</ul>
-			<h3>HTML/CSS Frameworks/Librairies</h3>
-			<ul>
-				<li>Bootstrap</li>
-				<li>Foundation</li>
-				<li>Less/Sass/Stylus</li>
-			</ul>
-			<h3>Javascript Frameworks/Librairies</h3>
-			<ul>
-				<li>AngularJs</li>
-				<li>jQuery</li>
-				<li>Node.js</li>
-			</ul>
-			<h3>PHP Frameworks</h3>
-			<ul>
-				<li>Symfony</li>
-				<li>Phalcon</li>
-			</ul>
-			<h3>Operating System (in this order)</h3>
-			<ul>
-				<li>Windows</li>
-				<li>Linux</li>
-				<li>Mac</li>
-			</ul>
+			<h3>Favorite Coding Languages</h3>
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<img src="img/HTML5_Logo_512.png" alt="HTML5 logo">
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<img src="img/jsLogo.png" alt="Javascript Logo">
+					Big favorite here (JS)
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<img src="img/logo_php.png" alt="PHP logo">
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -9,6 +9,7 @@ hr{
 }
 .mainPresentation ::selection{
 	background-color:red;
+	color:#fff;
 }
 .mainPortfolio ::selection{
 	background-color:purple;	
@@ -96,7 +97,7 @@ hr{
 }
 /*Presentation - thumbnail*/
 .mainPresentation .thumbnail{
-	min-height:280px;
+	
 }
 .mainPresentation .thumbnail h3{
 	text-align:center;
@@ -111,9 +112,30 @@ hr{
 	font-size: 5em;
 	line-height:1em;
 }
+/*Presentation - technical*/
+.technical_skill {
+	text-align:center;
+}
+.technical_skill h3{
+	text-align:center;
+	margin-top:0;
+	margin-bottom:35px;
+}
+.technical_skill div img{
+	display:block;
+	height: 200px;
+	width: 200px;
+	margin: 0 auto;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+}
+.technical_skill div:hover img{
+	filter: grayscale(0%);
+	-webkit-filter: grayscale(0%);
+}
 @media (max-width: 992px){
-	.mainPresentation .thumbnail{
-		margin-top:25px;
-		min-height:100%;
+	.technical_skill div img{
+		margin-top: 10px;
+		margin-bottom:10px;
 	}
 }

@@ -1,7 +1,8 @@
 var app = angular.module("sPortfolio2015",["ngRoute","ngAnimate"]);
 app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle){
 	navBarToggle();
-
+	/*var c = document.querySelectorAll("img");
+	c[1].setAttribute("style","-webkit-filter:grayscale(100%)");*/
 	$scope.autoCollapseMenu = function(){
 		var n = document.getElementsByClassName("nav");
 		var nb = document.getElementsByClassName("navbar-brand");
