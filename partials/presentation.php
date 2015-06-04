@@ -1,7 +1,7 @@
 <div class="mainPresentation">
 	<div class="jumbotron">
 		<h1>Satoru HEMMI - Web Developper</h1>
-		<p><a class="btn btn-default btn-md" href="/pf_2015-2016/portfolio" role="button">Portfolio</a></p>
+		<p class="pagination-center"><a class="btn btn-default btn-md" href="/pf_2015-2016/portfolio" role="button">Portfolio</a></p>
 	</div>
 	<div class="container-fluid">
 		<div class="row">

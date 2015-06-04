@@ -1,8 +1,5 @@
 var app = angular.module("sPortfolio2015",["ngRoute","ngAnimate"]);
 app.controller("mainController",function($scope, $route, $routeParams, $location,navBarToggle){
-	navBarToggle();
-	/*var c = document.querySelectorAll("img");
-	c[1].setAttribute("style","-webkit-filter:grayscale(100%)");*/
 	$scope.autoCollapseMenu = function(){
 		var n = document.getElementsByClassName("nav");
 		var nb = document.getElementsByClassName("navbar-brand");
@@ -17,12 +14,22 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 			}
 		}
 	}
+	navBarToggle();
 	$scope.autoCollapseMenu();
+});
+app.controller("portfolioController",function($scope, portfolioManager){
+	$scope.filters = portfolioManager();
+	$scope.buttonClicked=function(arg){
+		console.log(arg);
+	}
+});
+app.controller("contactController",function($scope){
+	console.log("contact controller here");
 });
 app.config(function($routeProvider,$locationProvider){
 	$routeProvider.when('/portfolio',{
 		templateUrl:"partials/portfolio.php",
-		controller:"mainController"
+		controller:"portfolioController"
 	});
 	$routeProvider.when('/presentation',{
 		templateUrl:"partials/presentation.php",
@@ -30,7 +37,7 @@ app.config(function($routeProvider,$locationProvider){
 	});
 	$routeProvider.when('/contact',{
 		templateUrl:"partials/contact.php",
-		controller:"mainController"
+		controller:"contactController"
 	});
 	$routeProvider.otherwise({redirectTo:"/presentation"});
 	$locationProvider.html5Mode(true);
@@ -123,5 +130,13 @@ app.factory("scopeFactory",function(){
 				break;
 			}
 		}
+	}
+});
+app.factory("portfolioManager",function(){
+	var filters = ["HTML/CSS","JavaScript","AngularJS","Bootstrap"];
+	var c = document.getElementsByClassName("mainPortfolio");
+	console.log(c);
+	return function(){
+		return filters;
 	}
 });
