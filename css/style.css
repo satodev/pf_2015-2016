@@ -8,30 +8,30 @@ hr{
 	border-color:#ccc;
 }
 .mainPresentation ::selection{
-	background-color:red;
+	background-color:rgb(231, 76, 60);
 	color:#fff;
 }
 .mainPortfolio ::selection{
-	background-color:purple;	
+	background-color:rgb(140, 83, 198);	
 }
 .mainContact ::selection{
-	background-color: green;
+	background-color: rgb(63, 195, 128);
 }
 ::-moz-selection{
-	background-color:red;
+	background-color:rgb(231, 76, 60);
 }
 /*Navbar*/
 .anim-default{
-	border-bottom: 3px solid red;
+	border-bottom: 3px solid rgb(231, 76, 60);
 }
 .anim-presentation{
-	border-bottom: 3px solid red;
+	border-bottom: 3px solid rgb(231, 76, 60);
 }
 .anim-portfolio{
-	border-bottom: 3px solid purple;
+	border-bottom: 3px solid rgb(140, 83, 198);
 }
 .anim-contact{
-	border-bottom: 3px solid green;
+	border-bottom: 3px solid rgb(63, 195, 128);
 }
 .navbar-brand{
 	padding:0;
@@ -46,7 +46,6 @@ hr{
 .navbar-right li:hover img{
 	opacity:1;
 }
-
 @media (min-width: 768px){
 	.navbar-right {
 		margin-right:0px;
@@ -81,7 +80,7 @@ hr{
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:20px;
-	border-color:red;
+	border-color:rgb(231, 76, 60);
 	background-color: #333;
 	color:#fff;
 }
@@ -96,9 +95,6 @@ hr{
 	}
 }
 /*Presentation - thumbnail*/
-.mainPresentation .thumbnail{
-	
-}
 .mainPresentation .thumbnail h3{
 	text-align:center;
 }
@@ -116,26 +112,53 @@ hr{
 .technical_skill {
 	text-align:center;
 }
+.technical_skill .row{
+	padding-top:10px;
+	background-color: #f3f3f3;
+}
 .technical_skill h3{
 	text-align:center;
-	margin-top:0;
-	margin-bottom:35px;
+	margin-top:0px;
+	margin-bottom:10px;
 }
-.technical_skill div img{
+.technical_skill img{
 	display:block;
-	height: 200px;
-	width: 200px;
+	height: 150px;
+	width: auto;
 	margin: 0 auto;
-	filter: grayscale(100%);
-	-webkit-filter: grayscale(100%);
+	margin-bottom:25px;
+	/*filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);*/
 }
-.technical_skill div:hover img{
-	filter: grayscale(0%);
-	-webkit-filter: grayscale(0%);
+.technical_skill:hover img{
+	/*filter: grayscale(0%);
+	-webkit-filter: grayscale(0%);*/
 }
 @media (max-width: 992px){
 	.technical_skill div img{
 		margin-top: 10px;
 		margin-bottom:10px;
 	}
+}
+.technical_skill .btn{
+	width:15%;
+	font-family:sans-serif;
+	text-align:center;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	border-color:rgb(231, 76, 60);
+	background-color: #333;
+	color:#fff;
+}
+@media (max-width: 768px){
+	.technical_skill .btn{
+		width: auto;
+		font-family:sans-serif;
+		text-align:center;
+	}
+}
+.technical_skill .btn:hover{
+	border-color:#adadad;
 }

@@ -10,7 +10,7 @@
 					<span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 					<h3>Fast Learning Technologies</h3>
 					<p>
-						My experience and my passion for programming allows me, somehow, to learn quite fast some technologies that we need for our projects. More precisely, I'm talking about almost all web technologies, especially JavaScript that is by far one of my favorite (as you can you in the list bellow).
+						My experience and my passion for programming allows me, somehow, to learn quite fast some technologies that we need for our projects. More precisely, I'm talking about almost all web technologies, especially JavaScript that is by far my favorite (as you can see in the list bellow).
 					</p>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 			<div class="col-xs-12 col-md-4">
 				<div class="thumbnail">
 					<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-					<h3>Compagny Economic Awareness</h3>
+					<h3>Company Economic Awareness</h3>
 					<p>
 						I like the idea of Teaching and Learning its a great idea within a company, it helps enhance projects and company reputation.
 						Beside technological application, managing a team to respect the client desire precisely and in time is also a point that is almost as important.
@@ -35,17 +35,25 @@
 			</div>
 		</div>
 		<div class="technical_skill">
-			<h3>Favorite Coding Languages</h3>
+			<h3>Favorite Technologies</h3>
 			<div class="row">
-				<div class="col-xs-12 col-md-4">
+				<div class="col-xs-6 col-md-4">
 					<img src="img/HTML5_Logo_512.png" alt="HTML5 logo">
 				</div>
-				<div class="col-xs-12 col-md-4">
-					<img src="img/jsLogo.png" alt="Javascript Logo">
-					Big favorite here (JS)
+				<div class="col-xs-6 col-md-4">
+					<img src="img/css3.png" alt="PHP logo">
 				</div>
-				<div class="col-xs-12 col-md-4">
-					<img src="img/logo_php.png" alt="PHP logo">
+				<div class="col-xs-6 col-md-4">
+					<img src="img/jsLogo.png" alt="Javascript Logo">
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<img src="img/node.png" alt="Javascript Logo">
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<img src="img/angular.png" alt="PHP logo">
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<img src="img/logo_php.png" alt="Javascript Logo">
 				</div>
 			</div>
 		</div>
