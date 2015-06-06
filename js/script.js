@@ -20,7 +20,8 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 app.controller("portfolioController",function($scope, portfolioManager){
 	$scope.filters = portfolioManager();
 	$scope.buttonClicked=function(arg){
-		console.log(arg);
+		console.log("filters are " + $scope.filters);
+		console.log("you clicked " + arg);
 	}
 });
 app.controller("contactController",function($scope){
@@ -133,10 +134,38 @@ app.factory("scopeFactory",function(){
 	}
 });
 app.factory("portfolioManager",function(){
-	var filters = ["HTML/CSS","JavaScript","AngularJS","Bootstrap"];
-	var c = document.getElementsByClassName("mainPortfolio");
-	console.log(c);
+	var filters = [];
+	var f=[];
+	function updatePostSubject(){
+		var c = document.querySelectorAll(".mainPortfolio h3");
+		for(var i = 0; i<c.length;i++){
+			console.log(c[i].getAttribute("title"));
+			if(c[i].getAttribute("title") != null && c[i].getAttribute("title") != undefined && c[i].getAttribute("title") != ""){
+				var elem = c[i].getAttribute("title").toUpperCase();
+				filters.push(elem);
+			}
+		}
+		return filters;
+	}
+	function verifFilters(){
+		var verifFilter = filters;
+		var dataFound = true;
+		var compt = 0;
+		var doublonDetected = false;
+		for(var i=0; i<verifFilter.length;i++){
+			var data = verifFilter[i];
+			console.log("data = " + data);
+			for(var j = 0; j<verifFilter.length;j++){
+				if(data == verifFilter[j]){
+					console.log(data + " = " + verifFilter[j]);
+				}
+			}
+		}
+	}
 	return function(){
+		updatePostSubject();
+		verifFilters();
+		console.log(filters);
 		return filters;
 	}
 });
