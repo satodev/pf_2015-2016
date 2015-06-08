@@ -136,35 +136,44 @@ app.factory("scopeFactory",function(){
 app.factory("portfolioManager",function(){
 	var filters = [];
 	var f=[];
+	function resetFilters(){
+		filters = [];
+	}
 	function updatePostSubject(){
 		var c = document.querySelectorAll(".mainPortfolio h3");
+		var elem = null;
+		var sepArray = [];
+		var finalArray = [];
 		for(var i = 0; i<c.length;i++){
-			console.log(c[i].getAttribute("title"));
 			if(c[i].getAttribute("title") != null && c[i].getAttribute("title") != undefined && c[i].getAttribute("title") != ""){
-				var elem = c[i].getAttribute("title").toUpperCase();
+				elem = c[i].getAttribute("title").toUpperCase();
+				console.log(elem);
+
 				filters.push(elem);
 			}
-		}
+		}		
 		return filters;
 	}
-	function verifFilters(){
-		var verifFilter = filters;
-		var dataFound = true;
-		var compt = 0;
-		var doublonDetected = false;
-		for(var i=0; i<verifFilter.length;i++){
-			var data = verifFilter[i];
-			console.log("data = " + data);
-			for(var j = 0; j<verifFilter.length;j++){
-				if(data == verifFilter[j]){
-					console.log(data + " = " + verifFilter[j]);
+	function checkArray(array){
+		var e={
+			indexArray: [],
+			errorIndex: [],
+		};
+		for(var i=0; i<array.length; i++){
+			e.indexArray.push(array[i]);
+			for(var j=0;j<array.length;j++){
+				if(array[i] == array[j]){
+					e.errorIndex.push(array[j]);
 				}
 			}
 		}
+		console.log(e);
 	}
 	return function(){
+		resetFilters();
 		updatePostSubject();
-		verifFilters();
+		//verifFilters();
+		checkArray(filters);
 		console.log(filters);
 		return filters;
 	}
