@@ -7,7 +7,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="container-fluid" ng-model="filters">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">

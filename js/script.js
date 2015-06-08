@@ -135,7 +135,6 @@ app.factory("scopeFactory",function(){
 });
 app.factory("portfolioManager",function(){
 	var filters = [];
-	var f=[];
 	function resetFilters(){
 		filters = [];
 	}
@@ -147,12 +146,16 @@ app.factory("portfolioManager",function(){
 		for(var i = 0; i<c.length;i++){
 			if(c[i].getAttribute("title") != null && c[i].getAttribute("title") != undefined && c[i].getAttribute("title") != ""){
 				elem = c[i].getAttribute("title").toUpperCase();
-				console.log(elem);
-
-				filters.push(elem);
+				pushF(elem);
 			}
-		}		
+		}	
 		return filters;
+	}
+	function pushF(elem){
+		return filters.push(elem);
+	}
+	function splitSpaces(e){
+		console.log(e);
 	}
 	function checkArray(array){
 		var e={
@@ -161,13 +164,16 @@ app.factory("portfolioManager",function(){
 		};
 		for(var i=0; i<array.length; i++){
 			e.indexArray.push(array[i]);
+
 			for(var j=0;j<array.length;j++){
 				if(array[i] == array[j]){
 					e.errorIndex.push(array[j]);
 				}
 			}
 		}
+		splitSpaces(e.indexArray);
 		console.log(e);
+
 	}
 	return function(){
 		resetFilters();
