@@ -141,21 +141,30 @@ app.factory("portfolioManager",function(){
 	function updatePostSubject(){
 		var c = document.querySelectorAll(".mainPortfolio h3");
 		var elem = null;
-		var sepArray = [];
 		var finalArray = [];
+		var splitArray = [];
 		for(var i = 0; i<c.length;i++){
 			if(c[i].getAttribute("title") != null && c[i].getAttribute("title") != undefined && c[i].getAttribute("title") != ""){
-				elem = c[i].getAttribute("title").toUpperCase();
-				pushF(elem);
+				elem = getTitleData(c[i]);
+				splitSpaces(splitArray, elem);
+				//checkArray(elem);
 			}
 		}	
 		return filters;
 	}
-	function pushF(elem){
-		return filters.push(elem);
+	function getTitleData(contArray){
+		elem = contArray.getAttribute("title").toUpperCase();
+		return elem;
 	}
-	function splitSpaces(e){
-		console.log(e);
+	function splitSpaces(array, e){
+		var regex = /\s/gi;
+		var res = e.split(regex);
+		if(res){
+			for(var i =0; i<res.length;i++){
+				filters.push(res[i]);
+			}
+		}
+		return true;
 	}
 	function checkArray(array){
 		var e={
@@ -171,15 +180,12 @@ app.factory("portfolioManager",function(){
 				}
 			}
 		}
-		splitSpaces(e.indexArray);
 		console.log(e);
-
 	}
 	return function(){
 		resetFilters();
 		updatePostSubject();
 		//verifFilters();
-		checkArray(filters);
 		console.log(filters);
 		return filters;
 	}

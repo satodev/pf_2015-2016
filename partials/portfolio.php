@@ -22,7 +22,7 @@
 				<div class="thumbnail">
 					<img src="#" alt="#">
 					<div class="caption">
-						<h3>HTML CSS</h3>
+						<h3 title="HTML CSS Bootstrap">HTML CSS</h3>
 						<p>
 							<a href="#" class="btn btn-primary" role="button">Button</a>
 						</p>
