@@ -13,9 +13,11 @@ hr{
 }
 .mainPortfolio ::selection{
 	background-color:rgb(140, 83, 198);	
+	color:#fff;
 }
 .mainContact ::selection{
 	background-color: rgb(63, 195, 128);
+	color:#fff;
 }
 ::-moz-selection{
 	background-color:rgb(231, 76, 60);

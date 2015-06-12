@@ -166,25 +166,27 @@ app.factory("portfolioManager",function(){
 		}
 		return true;
 	}
-	function checkArray(array){
-		var e={
-			indexArray: [],
-			errorIndex: [],
-		};
-		for(var i=0; i<array.length; i++){
-			e.indexArray.push(array[i]);
-
-			for(var j=0;j<array.length;j++){
-				if(array[i] == array[j]){
-					e.errorIndex.push(array[j]);
+	function verifDoubles(){
+		var clearArray = [];
+		console.log(filters);
+		for(var i=0; i<filters.length; i++){
+			var compt = 0;
+			for(var j=0; j<filters.length; j++){
+				if(filters[i] == filters[j] && i != j){
+					compt++;
+					console.log("filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
+					clearArray = filters[i];
+					console.log(clearArray);
+					
 				}
 			}
 		}
-		console.log(e);
+		return filters = clearArray;
 	}
 	return function(){
 		resetFilters();
 		updatePostSubject();
+		verifDoubles();
 		//verifFilters();
 		console.log(filters);
 		return filters;
