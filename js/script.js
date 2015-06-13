@@ -166,21 +166,31 @@ app.factory("portfolioManager",function(){
 		}
 		return true;
 	}
+	function removeArrayValue(val, array){
+		for(var i =0; i<val.length; i++){
+			var remove = array.splice(val[i],1);
+		}
+		return array;
+	}
 	function verifDoubles(){
 		var clearArray = [];
+		var indexes = [];
 		console.log(filters);
 		for(var i=0; i<filters.length; i++){
 			var compt = 0;
+			clearArray = filters;
+			console.log(clearArray);
 			for(var j=0; j<filters.length; j++){
-				if(filters[i] == filters[j] && i != j){
+				if(filters[i] == filters[j]){
 					compt++;
 					console.log("filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
-					clearArray = filters[i];
-					console.log(clearArray);
-					
+				}
+				if(compt>=2){
+					indexes.push(j);
 				}
 			}
 		}
+		removeArrayValue(indexes, clearArray);
 		return filters = clearArray;
 	}
 	return function(){
