@@ -18,10 +18,17 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 	$scope.autoCollapseMenu();
 });
 app.controller("portfolioController",function($scope, portfolioManager){
-	$scope.filters = portfolioManager();
-	$scope.buttonClicked=function(arg){
+	$scope.filters = portfolioManager().filters;
+	$scope.indexes = portfolioManager().indexes;
+	$scope.buttonClicked = function(arg){
 		console.log("filters are " + $scope.filters);
+		console.log("indexes are " + $scope.indexes);
 		console.log("you clicked " + arg);
+		$scope.showArticle(arg);
+	}
+	$scope.showArticle = function(a){
+		console.log("let show " + a)
+		console.log("indexes : " + $scope.indexes)
 	}
 });
 app.controller("contactController",function($scope){
@@ -135,8 +142,14 @@ app.factory("scopeFactory",function(){
 });
 app.factory("portfolioManager",function(){
 	var filters = [];
+	var clearArray = [];
+	var indexes = [];
+
 	function resetFilters(){
 		filters = [];
+	}
+	function getArrayIndex(){
+		return indexes;
 	}
 	function updatePostSubject(){
 		var c = document.querySelectorAll(".mainPortfolio h3");
@@ -173,8 +186,7 @@ app.factory("portfolioManager",function(){
 		return array;
 	}
 	function verifDoubles(){
-		var clearArray = [];
-		var indexes = [];
+		
 		console.log(filters);
 		for(var i=0; i<filters.length; i++){
 			var compt = 0;
@@ -194,11 +206,14 @@ app.factory("portfolioManager",function(){
 		return filters = clearArray;
 	}
 	return function(){
-		resetFilters();
+		resetFilters()
 		updatePostSubject();
 		verifDoubles();
-		//verifFilters();
+		getArrayIndex();
 		console.log(filters);
-		return filters;
+		return{
+			filters : filters,
+			indexes : indexes
+		}
 	}
 });

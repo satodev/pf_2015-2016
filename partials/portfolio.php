@@ -9,7 +9,7 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-6 col-md-4">
+			<div class="col-sm-6 col-md-4" ng-show="ANGULARJS" >
 				<div class="thumbnail" ng-hide="">
 					<img src="#" alt="#">
 					<div class="caption">
