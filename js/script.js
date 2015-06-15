@@ -19,16 +19,47 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 });
 app.controller("portfolioController",function($scope, portfolioManager){
 	$scope.filters = portfolioManager().filters;
-	$scope.indexes = portfolioManager().indexes;
+	//$scope.indexes = portfolioManager().indexes;
 	$scope.buttonClicked = function(arg){
-		console.log("filters are " + $scope.filters);
-		console.log("indexes are " + $scope.indexes);
-		console.log("you clicked " + arg);
-		$scope.showArticle(arg);
+		if(arg == 'reset'){
+			$scope.reset();
+		}else{
+			console.log("filters are " + $scope.filters);
+			//console.log("indexes are " + $scope.indexes);
+			console.log("you clicked " + arg);
+			$scope.showArticle(arg);
+		}
+	}
+	$scope.reset = function(){
+		var article = document.querySelectorAll(".mainPortfolio h3");
+		for(var i =0; i<article.length; i++){
+			var elem = article[i].getAttribute("title");
+			var allElem = article[i].parentNode.parentNode.parentNode;
+			allElem.style.display = "block";
+		}
 	}
 	$scope.showArticle = function(a){
-		console.log("let show " + a)
-		console.log("indexes : " + $scope.indexes)
+		var e = new RegExp(a, "gi");
+		var article = document.querySelectorAll(".mainPortfolio h3");
+		for(var i =0; i<article.length; i++){
+			var elem = article[i].getAttribute("title");
+			var allElem = article[i].parentNode.parentNode.parentNode;
+			allElem.style.display = "none";
+			console.log(article[i]);
+			if(elem != null && elem != " " && elem != ""){
+				elem = elem.toUpperCase();
+				var reg = elem.match(e);
+				if(reg){
+					var selectionDisplay = article[i].parentNode.parentNode.parentNode;
+					console.log("result of regexp is : "+ reg);
+					selectionDisplay.style.display = "block";
+					// console.log(article[i].parentNode.parentNode);
+				}
+			}
+			console.log(elem);
+		}
+		console.log("let show " + a);
+		console.log("indexes : " + $scope.indexes);
 	}
 });
 app.controller("contactController",function($scope){
@@ -186,7 +217,6 @@ app.factory("portfolioManager",function(){
 		return array;
 	}
 	function verifDoubles(){
-		
 		console.log(filters);
 		for(var i=0; i<filters.length; i++){
 			var compt = 0;

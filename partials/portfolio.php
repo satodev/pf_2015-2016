@@ -2,15 +2,20 @@
 	<div class="jumbotron">
 		<h1>Portfolio</h1>
 		<div  class="text-center pagination-center">
-			<p class="btn-group" ng-repeat="n in filters">
-				<a href="#" ng-click="buttonClicked(n)" class="btn btn-default" role="button">{{n}}</a>
+			<p class="btn-group">
+				<span>
+				<a href="#" ng-click="buttonClicked('reset')" class="btn btn-default" role="button">Reset</a>
+				</span>
+				<span ng-repeat="n in filters">
+					<a href="#" ng-click="buttonClicked(n)" class="btn btn-default" role="button">{{n}}</a>
+				</span>
 			</p>
 		</div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-6 col-md-4" ng-show="ANGULARJS" >
-				<div class="thumbnail" ng-hide="">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
 					<img src="#" alt="#">
 					<div class="caption">
 						<h3 title="AngularJs">DateTime Project</h3>
