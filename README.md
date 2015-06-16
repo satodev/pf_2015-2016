@@ -56,3 +56,11 @@ Different way to contact me like :
 	- Social Media : LinkedIn, Google+, StackOverflow, Github
 	- Contact Form
 	- Maybe Google Map as in my previous PF
+
+## PUT ON SERVER
+
+There is a couple of things that you must do if you want to put that project on a server, four things actually : 
+	- Change de base in the index.php in the header section from "/pf_2015-2016/" to "/"
+	- correct all the link that has "/pf_2015-2016/" in it
+	- Change ngRoute values in js/script.js
+	- Change .htaccess file corresponding to your server configuration
