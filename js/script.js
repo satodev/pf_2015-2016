@@ -70,37 +70,37 @@ app.controller("contactController",function($scope,$http){
   $scope.submission = false;
   // Updated code thanks to Yotam
   var param = function(data) {
-        var returnString = '';
-        for (d in data){
-            if (data.hasOwnProperty(d))
-               returnString += d + '=' + data[d] + '&';
-        }
+  	var returnString = '';
+  	for (d in data){
+  		if (data.hasOwnProperty(d))
+  			returnString += d + '=' + data[d] + '&';
+  	}
         // Remove last ampersand and return
         return returnString.slice( 0, returnString.length - 1 );
-  };
-  $scope.submitForm = function() {
-    $http({
-    method : 'POST',
-    url : 'php/process.php',
+    };
+    $scope.submitForm = function() {
+    	$http({
+    		method : 'POST',
+    		url : 'php/process.php',
     data : param($scope.formData), // pass in data as strings
     headers : { 'Content-Type': 'application/x-www-form-urlencoded' } // set the headers so angular passing info as form data (not request payload)
-  })
-    .success(function(data) {
-      if (!data.success) {
+})
+    	.success(function(data) {
+    		if (!data.success) {
        // if not successful, bind errors to error variables
        $scope.errorName = data.errors.name;
        $scope.errorEmail = data.errors.email;
        $scope.errorTextarea = data.errors.message;
        $scope.submissionMessage = data.messageError;
        $scope.submission = true; //shows the error message
-      } else {
+   } else {
       // if successful, bind success message to message
-       $scope.submissionMessage = data.messageSuccess;
+      $scope.submissionMessage = data.messageSuccess;
        $scope.formData = {}; // form fields are emptied with this line
        $scope.submission = true; //shows the success message
-      }
-     });
-   };
+   }
+});
+    };
 });
 app.config(function($routeProvider,$locationProvider){
 	$routeProvider.when('/portfolio',{
@@ -254,22 +254,27 @@ app.factory("portfolioManager",function(){
 		return array;
 	}
 	function verifDoubles(){
-		console.log(filters);
 		for(var i=0; i<filters.length; i++){
 			var compt = 0;
 			clearArray = filters;
 			console.log(clearArray);
+			console.log("initial Value : "+ filters[i] + " " + i);
 			for(var j=0; j<filters.length; j++){
-				if(filters[i] == filters[j]){
-					compt++;
-					console.log("filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
-				}
-				if(compt>=2){
-					indexes.push(j);
+				if(filters[i] == filters[j] && i!=j){
+					console.log("E - filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
+					// if(compt>=2){
+					//	console.log("D - filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
+						indexes.push(j);
+					// }
+				}else{
+					console.log("Register data : " + filters[i])
 				}
 			}
+			console.log(indexes);
 		}
-		removeArrayValue(indexes, clearArray);
+		console.log(indexes);
+		//removeArrayValue(indexes, clearArray);
+		console.log(clearArray);
 		return filters = clearArray;
 	}
 	return function(){
