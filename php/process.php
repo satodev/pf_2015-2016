@@ -26,11 +26,11 @@ if ( ! empty($errors)) {
   $email_from = $_POST['email']; // required
   $message = $_POST['message']; // required
   $email_message = "Form details below.nn";
-  $email_message .= "Name: ".$name."n";
-  $email_message .= "Email: ".$email_from."n";
-  $email_message .= "Message: ".$message."n";
-  $headers = 'From: '.$email_from."rn".
-  'Reply-To: '.$email_from."rn" .
+  $email_message .= "Name: ".$name."\n";
+  $email_message .= "Email: ".$email_from."\n";
+  $email_message .= "Message: ".$message."\n";
+  $headers = 'From: '.$email_from."\r\n".
+  'Reply-To: '.$email_from."\r\n" .
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);
 }

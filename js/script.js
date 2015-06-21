@@ -259,7 +259,6 @@ app.factory("portfolioManager",function(){
 		resetFilters()
 		updatePostSubject();
 		verifDoubles();
-		console.log(filters);
 		return{
 			filters : filters
 		}

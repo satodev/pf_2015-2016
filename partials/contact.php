@@ -11,20 +11,20 @@
 	<form class="form-horizontal" ng-submit="submitForm()" ng-controller="contactController" novalidate>
 		<div class="form-group">
 			<label  for="name" class="col-sm-2 control-label">Name</label>
-			<div class="col-sm-10 col-md-5 col-lg-8">
+			<div class="col-sm-10 col-md-10 col-lg-8">
 				<input type="text" class="form-control" id="inputName3" placeholder="Name"  name="name" ng-model="formData.name" ng-class="{'error' : errorName}">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="email" class="col-sm-2 control-label">Email</label>
-			<div class="col-sm-10 col-md-5 col-lg-8">
+			<div class="col-sm-10 col-md-10 col-lg-8">
 				<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" ng-model="formData.email" ng-class="{'error' : errorEmail}">
 			</div>
 		</div>
 		
 		<div class="form-group">
 		<label for="message" class="col-sm-2 control-label">Message</label>
-		<div class="col-sm-10 col-md-5 col-lg-8">
+		<div class="col-sm-10 col-md-10 col-lg-8">
 			<textarea class="form-control"  name="message" ng-class="{'error' : errorTextarea}" ng-model="formData.message" cols="30" rows="10"></textarea>
 			</div>
 		</div>
