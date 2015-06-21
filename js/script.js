@@ -211,13 +211,9 @@ app.factory("scopeFactory",function(){
 app.factory("portfolioManager",function(){
 	var filters = [];
 	var clearArray = [];
-	var indexes = [];
 
 	function resetFilters(){
 		filters = [];
-	}
-	function getArrayIndex(){
-		return indexes;
 	}
 	function updatePostSubject(){
 		var c = document.querySelectorAll(".mainPortfolio h3");
@@ -228,7 +224,6 @@ app.factory("portfolioManager",function(){
 			if(c[i].getAttribute("title") != null && c[i].getAttribute("title") != undefined && c[i].getAttribute("title") != ""){
 				elem = getTitleData(c[i]);
 				splitSpaces(splitArray, elem);
-				//checkArray(elem);
 			}
 		}	
 		return filters;
@@ -247,45 +242,26 @@ app.factory("portfolioManager",function(){
 		}
 		return true;
 	}
-	function removeArrayValue(val, array){
-		for(var i =0; i<val.length; i++){
-			var remove = array.splice(val[i],1);
-		}
-		return array;
-	}
 	function verifDoubles(){
 		for(var i=0; i<filters.length; i++){
 			var compt = 0;
 			clearArray = filters;
-			console.log(clearArray);
-			console.log("initial Value : "+ filters[i] + " " + i);
-			for(var j=0; j<filters.length; j++){
-				if(filters[i] == filters[j] && i!=j){
-					console.log("E - filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
-					// if(compt>=2){
-					//	console.log("D - filters I " + i +" "+filters[i] + " filters J "+ j +" "+filters[j] + " " + compt);
-						indexes.push(j);
-					// }
-				}else{
-					console.log("Register data : " + filters[i])
-				}
+			clearArray.sort();
+			if(clearArray[i] == clearArray[i+1]){
+				var ar = clearArray.indexOf(clearArray[i]);
+				var remove = clearArray.splice(ar,1);
+				verifDoubles();
 			}
-			console.log(indexes);
-		}
-		console.log(indexes);
-		//removeArrayValue(indexes, clearArray);
-		console.log(clearArray);
+		}		
 		return filters = clearArray;
 	}
 	return function(){
 		resetFilters()
 		updatePostSubject();
 		verifDoubles();
-		getArrayIndex();
 		console.log(filters);
 		return{
-			filters : filters,
-			indexes : indexes
+			filters : filters
 		}
 	}
 });
