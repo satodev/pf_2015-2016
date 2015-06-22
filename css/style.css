@@ -192,9 +192,14 @@ hr{
 	color:black;
 }
 .mainPortfolio .thumbnail{
+	padding: 0;
 	text-align: center;
-	background-color:rgba(140,83,198,0.01);
+	background-color:rgb(250,250,250);
 	border-color:rgb(140, 83, 198);
+}
+.mainPortfolio .thumbnail .caption{
+	padding-top: 0;
+	margin-top:0;
 }
 /*contact*/
 .error {

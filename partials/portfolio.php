@@ -15,13 +15,13 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="#" alt="#">
+				<a target="_blank" href="work/DateTime" class="thumbnail">
+				<canvas id="canvasDateTime"></canvas>
+					<!-- <img src="#" alt="#"> -->
 					<div class="caption">
 						<h3 title="PHP Javascript HTML CSS">DateTime Project</h3>
-						<p><a target="_blank" href="work/DateTime/index.php" class="btn btn-primary" role="button">Button</a></p>
 					</div>
-				</div>
+				</a>
 			</div>
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
