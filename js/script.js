@@ -17,7 +17,7 @@ app.controller("mainController",function($scope, $route, $routeParams, $location
 	navBarToggle();
 	$scope.autoCollapseMenu();
 });
-app.controller("portfolioController",function($scope, portfolioManager,portfolioCanvasGenerator){
+app.controller("portfolioController",function($scope, portfolioManager){
 	$scope.filters = portfolioManager().filters;
 	//$scope.indexes = portfolioManager().indexes;
 	$scope.buttonClicked = function(arg){
@@ -61,7 +61,50 @@ app.controller("portfolioController",function($scope, portfolioManager,portfolio
 		console.log("let show " + a);
 		console.log("indexes : " + $scope.indexes);
 	}
+	canvas = {
+		thumbCont: document.querySelectorAll(".mainPortfolio .thumbnail"),
+		draw:function(){
+			//var thumbCont = document.querySelectorAll(".mainPortfolio .thumbnail");
+			console.log(canvas.thumbCont);
+			var tHeight = 0;
+			var tWidth = 0;
+			init();
+			function init(){
+				defineRange();	
+				window.onresize = function(){
+					dateTimeCanvas();
+				}
+				dateTimeCanvas();
+			}
 
+			function defineRange(){
+				for(var i = 0; i<canvas.thumbCont.length; i++){
+					tHeight = canvas.thumbCont[i].clientHeight + canvas.thumbCont[i].clientTop;
+					tWidth = canvas.thumbCont[i].offsetWidth;
+					console.log("heigth : " + tHeight);
+					console.log("width : " + tWidth);
+				}return{
+					tHeight,
+					tWidth
+				}
+			}
+
+			function dateTimeCanvas(){
+				defineRange();
+				var c = document.getElementById("canvasDateTime");
+				var cn = c.getContext("2d");
+				var grd;
+				cn.height = c.height = tHeight + 40;
+				cn.width = c.width =  tWidth;
+				cn.fillStyle = "purple";
+				cn.rect(0,0,cn.width, cn.height)
+				cn.fill();
+				cn.stroke();
+				console.log(c.width);
+			}
+		}
+	}
+	canvas.draw();
 });
 app.controller("contactController",function($scope,$http){
 	  // creating a blank object to hold our form information.
@@ -266,47 +309,49 @@ app.factory("portfolioManager",function(){
 	}
 });
 app.factory("portfolioCanvasGenerator",function(){
-	var thumbCont = document.querySelectorAll(".mainPortfolio .thumbnail");
-	console.log(thumbCont);
-	var tHeight = 0;
-	var tWidth = 0;
-	init();
-	function init(){
-		defineRange();	
-		window.onresize = function(){
-			dateTimeCanvas();
-		}
-		dateTimeCanvas();
-	}
+	console.log("portfolioCanvasGenerator");
+	return true;
+	// var thumbCont = document.querySelectorAll(".mainPortfolio .thumbnail");
+	// console.log(thumbCont);
+	// var tHeight = 0;
+	// var tWidth = 0;
+	// init();
+	// function init(){
+	// 	defineRange();	
+	// 	window.onresize = function(){
+	// 		dateTimeCanvas();
+	// 	}
+	// 	dateTimeCanvas();
+	// }
 	
-	function defineRange(){
-		for(var i = 0; i<thumbCont.length; i++){
-			tHeight = thumbCont[i].clientHeight + thumbCont[i].clientTop;
-			tWidth = thumbCont[i].offsetWidth;
-			console.log("heigth : " + tHeight);
-			console.log("width : " + tWidth);
-		}return{
-			tHeight,
-			tWidth
-		}
-	}
+	// function defineRange(){
+	// 	for(var i = 0; i<thumbCont.length; i++){
+	// 		tHeight = thumbCont[i].clientHeight + thumbCont[i].clientTop;
+	// 		tWidth = thumbCont[i].offsetWidth;
+	// 		console.log("heigth : " + tHeight);
+	// 		console.log("width : " + tWidth);
+	// 	}return{
+	// 		tHeight,
+	// 		tWidth
+	// 	}
+	// }
 	
-	function dateTimeCanvas(){
-		defineRange();
-		var c = document.getElementById("canvasDateTime");
-		var cn = c.getContext("2d");
-		var grd;
-		cn.height = c.height = tHeight + 40;
-		cn.width = c.width =  tWidth;
-		cn.fillStyle = "purple";
-		cn.rect(0,0,cn.width, cn.height)
-		cn.fill();
-		cn.stroke();
-		console.log(c.width);
-		//requestAnimationFrame(dateTimeCanvas);
-	}
-	return {
-		init : init(),
-		dateTimeCanvas: dateTimeCanvas()
-	}
+	// function dateTimeCanvas(){
+	// 	defineRange();
+	// 	var c = document.getElementById("canvasDateTime");
+	// 	var cn = c.getContext("2d");
+	// 	var grd;
+	// 	cn.height = c.height = tHeight + 40;
+	// 	cn.width = c.width =  tWidth;
+	// 	cn.fillStyle = "purple";
+	// 	cn.rect(0,0,cn.width, cn.height)
+	// 	cn.fill();
+	// 	cn.stroke();
+	// 	console.log(c.width);
+	// 	//requestAnimationFrame(dateTimeCanvas);
+	// }
+	// return {
+	// 	init : init(),
+	// 	dateTimeCanvas: dateTimeCanvas()
+	// }
 });
