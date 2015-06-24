@@ -70,19 +70,22 @@ app.controller("portfolioController",function($scope, portfolioManager){
 			var tWidth = 0;
 			init();
 			function init(){
-				defineRange();	
+				dateTimeCanvas();
 				window.onresize = function(){
+						tHeight = 0;
+					tWidth = 0;
 					dateTimeCanvas();
 				}
-				dateTimeCanvas();
 			}
 
 			function defineRange(){
 				for(var i = 0; i<canvas.thumbCont.length; i++){
-					tHeight = canvas.thumbCont[i].clientHeight + canvas.thumbCont[i].clientTop;
-					tWidth = canvas.thumbCont[i].offsetWidth;
-					console.log("heigth : " + tHeight);
-					console.log("width : " + tWidth);
+					if(canvas.thumbCont[i].offsetHeight != 0  && canvas.thumbCont[i].offsetWidth != 0){
+						tHeight = canvas.thumbCont[i].clientHeight;
+						tWidth = canvas.thumbCont[i].offsetWidth;
+						console.log("heigth : " + tHeight);
+						console.log("width : " + tWidth);
+					}
 				}return{
 					tHeight,
 					tWidth
@@ -92,9 +95,10 @@ app.controller("portfolioController",function($scope, portfolioManager){
 			function dateTimeCanvas(){
 				defineRange();
 				var c = document.getElementById("canvasDateTime");
+				console.log(c.clientHeight);
 				var cn = c.getContext("2d");
 				var grd;
-				cn.height = c.height = tHeight + 40;
+				cn.height = c.height = tHeight;
 				cn.width = c.width =  tWidth;
 				cn.fillStyle = "purple";
 				cn.rect(0,0,cn.width, cn.height)
