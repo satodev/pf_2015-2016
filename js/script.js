@@ -63,52 +63,51 @@ app.controller("portfolioController",function($scope, portfolioManager){
 	}
 	canvas = {
 		thumbCont: document.querySelectorAll(".mainPortfolio .thumbnail"),
+		cHeight: 0,
+		cWidth: 0,
+		thumbProperties : function(){
+			for(var i = 0; i<canvas.thumbCont.length; i++){
+				if(canvas.thumbCont[i].clientHeight != 0 && canvas.thumbCont[i].clientWidth != 0){
+					console.log("clientHeight : " +canvas.thumbCont[i].clientHeight);
+					console.log("clientWidth : " + canvas.thumbCont[i].clientWidth);
+					canvas.cHeight = canvas.thumbCont[i].clientHeight;
+					canvas.cWidth = canvas.thumbCont[i].clientWidth;		
+				}
+			}
+		},
 		draw:function(){
-			//var thumbCont = document.querySelectorAll(".mainPortfolio .thumbnail");
-			console.log(canvas.thumbCont);
-			var tHeight = 0;
-			var tWidth = 0;
 			init();
 			function init(){
-				dateTimeCanvas();
-				window.onresize = function(){
-						tHeight = 0;
-					tWidth = 0;
-					dateTimeCanvas();
-				}
+				canvas.dateTimeCanvas();
 			}
+		},
 
-			function defineRange(){
-				for(var i = 0; i<canvas.thumbCont.length; i++){
-					if(canvas.thumbCont[i].offsetHeight != 0  && canvas.thumbCont[i].offsetWidth != 0){
-						tHeight = canvas.thumbCont[i].clientHeight;
-						tWidth = canvas.thumbCont[i].offsetWidth;
-						console.log("heigth : " + tHeight);
-						console.log("width : " + tWidth);
-					}
-				}return{
-					tHeight,
-					tWidth
-				}
-			}
-
-			function dateTimeCanvas(){
-				defineRange();
-				var c = document.getElementById("canvasDateTime");
-				console.log(c.clientHeight);
-				var cn = c.getContext("2d");
-				var grd;
-				cn.height = c.height = tHeight;
-				cn.width = c.width =  tWidth;
-				cn.fillStyle = "purple";
-				cn.rect(0,0,cn.width, cn.height)
-				cn.fill();
-				cn.stroke();
-				console.log(c.width);
-			}
+		dateTimeCanvas: function(){
+			canvas.thumbProperties();
+			var c = document.getElementById("canvasDateTime");
+			console.log(c.clientHeight);
+			var cn = c.getContext("2d");
+			var grd;
+			cn.height = c.height = canvas.cHeight;;
+			cn.width = c.width =  canvas.cWidth;
+			// window.onresize = function(){
+			// 	canvas.thumbProperties();
+			// 	cn.height = canvas.cHeight;
+			// 	c.height = canvas.cHeight;
+			// 	cn.width = canvas.cWidth;
+			// 	c.width =  canvas.cWidth;
+			// }
+			cn.fillStyle = "purple";
+			cn.rect(0,0,cn.width, cn.height)
+			cn.fill();
+			cn.stroke();
+			console.log(c.width);
 		}
 	}
+canvas.draw();
+window.onresize = function(){
 	canvas.draw();
+}
 });
 app.controller("contactController",function($scope,$http){
 	  // creating a blank object to hold our form information.
