@@ -85,11 +85,14 @@ app.controller("portfolioController",function($scope, portfolioManager){
 		dateTimeCanvas: function(){
 			canvas.thumbProperties();
 			var c = document.getElementById("canvasDateTime");
-			console.log(c.clientHeight);
+			console.log(canvas.cHeight);
+			console.log(canvas.cWidth);
 			var cn = c.getContext("2d");
 			var grd;
-			cn.height = c.height = canvas.cHeight;;
-			cn.width = c.width =  canvas.cWidth;
+			cn.height = canvas.cHeight;
+			//c.height = canvas.cHeight;
+			cn.width = canvas.cWidth;
+			// c.width = canvas.cWidth;
 			// window.onresize = function(){
 			// 	canvas.thumbProperties();
 			// 	cn.height = canvas.cHeight;
@@ -101,7 +104,6 @@ app.controller("portfolioController",function($scope, portfolioManager){
 			cn.rect(0,0,cn.width, cn.height)
 			cn.fill();
 			cn.stroke();
-			console.log(c.width);
 		}
 	}
 canvas.draw();
