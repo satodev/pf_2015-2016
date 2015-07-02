@@ -45,7 +45,7 @@ app.controller("portfolioController",function($scope, portfolioManager){
 			var elem = article[i].getAttribute("title");
 			var allElem = article[i].parentNode.parentNode.parentNode;
 			allElem.style.display = "none";
-			console.log(article[i]);
+		//	console.log(article[i]);
 			if(elem != null && elem != " " && elem != ""){
 				elem = elem.toUpperCase();
 				var reg = elem.match(e);
@@ -56,60 +56,73 @@ app.controller("portfolioController",function($scope, portfolioManager){
 					// console.log(article[i].parentNode.parentNode);
 				}
 			}
-			console.log(elem);
+		//	console.log(elem);
 		}
 		console.log("let show " + a);
 		console.log("indexes : " + $scope.indexes);
 	}
 	canvas = {
-		thumbCont: document.querySelectorAll(".mainPortfolio .thumbnail"),
-		cHeight: 0,
-		cWidth: 0,
-		thumbProperties : function(){
-			for(var i = 0; i<canvas.thumbCont.length; i++){
-				if(canvas.thumbCont[i].clientHeight != 0 && canvas.thumbCont[i].clientWidth != 0){
-					console.log("clientHeight : " +canvas.thumbCont[i].clientHeight);
-					console.log("clientWidth : " + canvas.thumbCont[i].clientWidth);
-					canvas.cHeight = canvas.thumbCont[i].clientHeight;
-					canvas.cWidth = canvas.thumbCont[i].clientWidth;		
-				}
-			}
-		},
 		draw:function(){
-			init();
-			function init(){
-				canvas.dateTimeCanvas();
-			}
+			canvas.dateTimeCanvas();
 		},
-
+		updateLength : function(elem){
+			console.log(elem);
+			console.log(elem.clientHeight);
+			console.log(elem.clientWidth);
+		},
 		dateTimeCanvas: function(){
-			canvas.thumbProperties();
 			var c = document.getElementById("canvasDateTime");
-			console.log(canvas.cHeight);
-			console.log(canvas.cWidth);
+			canvas.updateLength(c);
+			var canvasHeight = c.clientHeight;
+			var canvasWidth = c.clientWidth;
+			console.log("canvasHeight is : " + canvasHeight);
+			console.log("canvasWidth is : " + canvasWidth);
 			var cn = c.getContext("2d");
-			var grd;
-			cn.height = canvas.cHeight;
-			//c.height = canvas.cHeight;
-			cn.width = canvas.cWidth;
-			// c.width = canvas.cWidth;
-			// window.onresize = function(){
-			// 	canvas.thumbProperties();
-			// 	cn.height = canvas.cHeight;
-			// 	c.height = canvas.cHeight;
-			// 	cn.width = canvas.cWidth;
-			// 	c.width =  canvas.cWidth;
-			// }
-			cn.fillStyle = "purple";
-			cn.rect(0,0,cn.width, cn.height)
+			cn.height = canvasHeight;
+			cn.width = canvasWidth;
+
+			cn.save();
+			cn.beginPath();
+			cn.fillStyle = "grey";
+			cn.rect(0,0,cn.width, cn.height);
 			cn.fill();
+			cn.closePath();
+			cn.restore();
+
+			cn.save();
+			cn.translate((cn.width)/2, (cn.height)/2);
+			cn.beginPath();
+			cn.arc(0, 0, 5,0, Math.PI*2);
 			cn.stroke();
+			cn.closePath();
+			cn.restore();
+
+			cn.save();
+			cn.beginPath();
+			cn.font = "12px sans-serif";
+			cn.fillStyle ="white";
+			cn.fillText(cn.width, 10,20);
+			cn.fillText(cn.height, 10,30);
+			cn.fillText((cn.width)/2, 10,50);
+			cn.fillText((cn.height)/2, 10,60);
+			cn.closePath();
+			cn.restore();
+
+			cn.save();
+			cn.beginPath();
+			cn.fillStyle="black";
+			cn.moveTo(0,0);
+			cn.translate((cn.width)/2, (cn.height)/2);
+			cn.arc(0, 0, 0, 0, Math.PI*2);
+			cn.fill();
+			cn.closePath();
+			cn.restore();
 		}
 	}
-canvas.draw();
-window.onresize = function(){
 	canvas.draw();
-}
+	window.onresize = function(){
+		canvas.draw();
+	}
 });
 app.controller("contactController",function($scope,$http){
 	  // creating a blank object to hold our form information.
