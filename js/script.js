@@ -72,48 +72,23 @@ app.controller("portfolioController",function($scope, portfolioManager){
 		},
 		dateTimeCanvas: function(){
 			var c = document.getElementById("canvasDateTime");
-			canvas.updateLength(c);
-			var canvasHeight = c.clientHeight;
-			var canvasWidth = c.clientWidth;
-			console.log("canvasHeight is : " + canvasHeight);
-			console.log("canvasWidth is : " + canvasWidth);
 			var cn = c.getContext("2d");
-			cn.height = canvasHeight;
-			cn.width = canvasWidth;
-
+			// background
+			var grad = cn.createRadialGradient(150,75,250,150,75,10);
+			grad.addColorStop(0,'grey');
+			grad.addColorStop(1,'rgba(255,255,255,0)');
 			cn.save();
 			cn.beginPath();
-			cn.fillStyle = "grey";
-			cn.rect(0,0,cn.width, cn.height);
-			cn.fill();
+			cn.fillStyle = grad;
+			cn.fillRect(0,0,300,150);
 			cn.closePath();
 			cn.restore();
-
+			// center
 			cn.save();
-			cn.translate((cn.width)/2, (cn.height)/2);
+			cn.fillStyle="purple";
 			cn.beginPath();
-			cn.arc(0, 0, 5,0, Math.PI*2);
-			cn.stroke();
-			cn.closePath();
-			cn.restore();
-
-			cn.save();
-			cn.beginPath();
-			cn.font = "12px sans-serif";
-			cn.fillStyle ="white";
-			cn.fillText(cn.width, 10,20);
-			cn.fillText(cn.height, 10,30);
-			cn.fillText((cn.width)/2, 10,50);
-			cn.fillText((cn.height)/2, 10,60);
-			cn.closePath();
-			cn.restore();
-
-			cn.save();
-			cn.beginPath();
-			cn.fillStyle="black";
-			cn.moveTo(0,0);
-			cn.translate((cn.width)/2, (cn.height)/2);
-			cn.arc(0, 0, 0, 0, Math.PI*2);
+			cn.strokeStyle = "purple";
+			cn.arc(150,75,60,0,Math.PI*2);
 			cn.fill();
 			cn.closePath();
 			cn.restore();
